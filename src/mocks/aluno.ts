@@ -2,10 +2,10 @@ import { Aluno } from "@/interfaces/types";
 
 const aluno: Aluno = {
     foto: "https://raw.githubusercontent.com/owhenrique/workout-plan-rm/main/public/avatar.jpeg",
-    sigla: "JD",
+    sigla: "RM",
     nome: "Raphael Miranda",
-    idade: "33",
-    peso: "75",
+    idade: "28",
+    peso: "101",
     objetivo: "Hipertrofia"
 }
 
