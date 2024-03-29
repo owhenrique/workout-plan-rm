@@ -1,6 +1,6 @@
-import { aluno } from "@/interfaces/types";
+import { Aluno } from "@/interfaces/types";
 
-const aluno: aluno = {
+const aluno: Aluno = {
     foto: "https://raw.githubusercontent.com/owhenrique/workout-plan-rm/main/public/avatar.jpeg",
     sigla: "JD",
     nome: "Raphael Miranda",

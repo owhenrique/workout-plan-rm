@@ -1,4 +1,4 @@
-export type aluno = {
+export type Aluno = {
     foto?: string,
     sigla: string,
     nome: string,
@@ -7,12 +7,12 @@ export type aluno = {
     objetivo: string
 }
 
-export type treino = {
+export type Treino = {
     categoria: string,
     exercicios: exercicios[],
 }
 
-export type exercicios = {
+export type Exercicios = {
     imagem?: string,
     nome?: string,
     duracao?: number,
