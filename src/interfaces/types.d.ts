@@ -9,7 +9,7 @@ export type Aluno = {
 
 export type Treino = {
     categoria: string,
-    exercicios: exercicios[],
+    exercicios: Exercicios[],
 }
 
 export type Exercicios = {
