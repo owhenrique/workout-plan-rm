@@ -1,7 +1,6 @@
 import treinoA from "./mocks/treinoA"
 import treinoB from "./mocks/treinoB"
 import treinoC from "./mocks/treinoC"
-import treinoD from "./mocks/treinoD"
 import aluno from "./mocks/aluno"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
@@ -21,13 +20,14 @@ import { PiClockCountdownFill } from 'react-icons/pi'
 
 
 function App() {
-  const [paginaAtual, setPaginaAtual] = useState(0);
+  const [paginaAtual, setPaginaAtual] = useState(0)
 
   const trocarPagina = (proximaPagina: number) => {
-    setPaginaAtual(proximaPagina);
+    setPaginaAtual(proximaPagina)
   };
 
-  const treinos = [treinoA, treinoB, treinoC, treinoD];
+  const treinos = [treinoA, treinoB, treinoC]
+  const paginas = treinos.length - 1
 
   return (
     <>
@@ -37,8 +37,8 @@ function App() {
             <AvatarImage src={aluno.foto}/>
             <AvatarFallback className='text-4xl font-medium'>{aluno.sigla}</AvatarFallback>
           </Avatar>
-          <div className='flex flex-col justify-center items-start'>
-            <h1 className='text-3xl font-bold'>{aluno.nome}</h1>
+          <div className='flex flex-col flex-wrap justify-center items-start'>
+            <h1 className='text-3xl font-bold overflow-wrap break-word max-w-12'>{aluno.nome}</h1>
             <h2 className='text-xl'>{aluno.idade} Anos</h2>
             <h2 className='text-xl'>{aluno.peso} Kilos</h2>
             <h2 className='text-xl'>{aluno.objetivo}</h2>
@@ -51,8 +51,8 @@ function App() {
               <CarouselItem key={index}>{paginaAtual + 1}</CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious onClick={() => trocarPagina(paginaAtual === 0 ? 3 : paginaAtual - 1)} />
-          <CarouselNext onClick={() => trocarPagina(paginaAtual === 3 ? 0 : paginaAtual + 1)} />
+          <CarouselPrevious onClick={() => trocarPagina(paginaAtual === 0 ? paginas : paginaAtual - 1)} />
+          <CarouselNext onClick={() => trocarPagina(paginaAtual === paginas ? 0 : paginaAtual + 1)} />
         </Carousel>
 
         <div className='flex flex-col gap-8'>

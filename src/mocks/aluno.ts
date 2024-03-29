@@ -1,5 +1,7 @@
-const aluno = {
-    foto: "https://xsgames.co/randomusers/assets/avatars/male/46.jpg",
+import { aluno } from "@/interfaces/types";
+
+const aluno: aluno = {
+    foto: "https://raw.githubusercontent.com/owhenrique/workout-plan-rm/main/public/avatar.jpeg",
     sigla: "JD",
     nome: "Raphael Miranda",
     idade: "33",

@@ -1,7 +1,7 @@
 import { treino } from "@/interfaces/types";
 
 const treinoC: treino = {
-    categoria: "Pernas",
+    categoria: "Peito e Tríceps",
     exercicios: [
       { imagem: "https://www.mundoboaforma.com.br/wp-content/uploads/2020/11/agachamento-com-barra.gif", nome: "Agachamento Livre", series: 4, repeticoes: 8, descanso: 90 },
       { imagem: "https://media.tenor.com/bqKtsSuqilQAAAAM/gym.gif", nome: "Cadeira Extensora", series: 3, repeticoes: 12, descanso: 60 },
