@@ -2,22 +2,15 @@ import treinoA from "./mocks/treinoA"
 import treinoB from "./mocks/treinoB"
 import treinoC from "./mocks/treinoC"
 import aluno from "./mocks/aluno"
+import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
 import { Card } from "@/components/ui/card"
 import { BiDumbbell } from "react-icons/bi";
 import { FaClock } from "react-icons/fa";
 import { GiBiceps } from "react-icons/gi";
-import { useState } from 'react';
 import { Exercicios } from './interfaces/types'
 import { PiClockCountdownFill } from 'react-icons/pi'
-
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 function App() {
   const [paginaAtual, setPaginaAtual] = useState(0)
@@ -45,15 +38,17 @@ function App() {
           </div>
         </div>
 
-        <Carousel className='flex justify-center items-center mx-32'>
-          <CarouselContent>
-            {treinos.map((_, index) => (
-              <CarouselItem key={index}>{paginaAtual + 1}</CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious onClick={() => trocarPagina(paginaAtual === 0 ? paginas : paginaAtual - 1)} />
-          <CarouselNext onClick={() => trocarPagina(paginaAtual === paginas ? 0 : paginaAtual + 1)} />
-        </Carousel>
+        <div className="flex justify-center items-center space-x-8 md:space-x-12">
+          <button className="flex justify-center items-center p-1 w-8 h-8 md:w-10 md:h-10 outline outline-[0.12rem] rounded-full" 
+            onClick={() => trocarPagina(paginaAtual === 0 ? paginas: paginaAtual - 1)}>
+              <FaArrowLeftLong size={14}/>
+          </button>
+          <p className="text-lg md:text-2xl font-semibold">{paginaAtual + 1}</p>
+          <button className="flex justify-center items-center p-1 w-8 h-8 md:w-10 md:h-10 outline outline-[0.12rem] rounded-full" 
+            onClick={() => trocarPagina(paginaAtual === paginas ? 0 : paginaAtual + 1)}>
+              <FaArrowRightLong size={14}/>
+          </button>
+        </div>
 
         <div className='flex flex-col gap-8'>
           <h1 className='font-medium text-4xl'>{treinos[paginaAtual].categoria}</h1>
